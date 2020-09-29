@@ -29,25 +29,28 @@ function addToList(num, pos) {
 function verificarAcertos() {
   sortearNumeros();
   let cont = 0 ;
-  if (numEsco.length != 6) {
+  if(numEsco.length != 6) {
     alert("A quantidade de números escolhidos é menor que 6.\nDigite 6 números de 1 a 60 com duas casas decimais");
   }
-
   else {
      for (var i = 0; i < 6 ; i++) {
-         if (numSort.includes(parseInt(numEsco[i]))) {
+         if(numSort.includes(parseInt(numEsco[i])))
+         {
            cont++;
          }
          }
+
          printNumSort();
          document.getElementById('totalAcertos').innerHTML="O total de acertos foi" + totalAcertos ;
   }
 }
+
 function printNumSort() {
-  document.getElementById('NumSort').innerHTML="";
+  document.getElementById('NumSort').innerHTML= "";
   for (var i = 0; i < numSort.length; i++) {
     let li = document.createElement("li");
     li.append(numSort[i]);
+    li.classList.add("result");
     document.getElementById('numSort').append(li);
   }
 
